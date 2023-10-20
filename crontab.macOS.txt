@@ -1,0 +1,10 @@
+SHELL = /bin/bash
+
+# If sha256 checksum of file matches the checksum listed in the cron entry, run the job
+
+# Cleanup old files in ~/Downloads daily (if not daily might go a while between runs... the system might be asleep, traveling, etc.)
+<<<your schedule here>>> [[ "<<<sha256 hash of archive_downloads.sh here>>>" == "$(shasum -a 256 ${HOME}/.local/bin/archive_downloads.sh|awk '{print $1}')" ]] && ${HOME}/.local/bin/archive_downloads.sh || echo "$(date +\'\%Y-\%m-\%d_\%Hh\%Mm_\%Z\') - Failed to validate checksum of ${HOME}/.local/bin/archive_downloads.sh" >> ${HOME}/.local/log/archive_status.log
+
+# Cleanup Screenshots from Desktop daily (if not daily might go a while between runs... the system might be asleep, traveling, etc.)
+<<<your schedule here>>> [[ "<<<sha256 hash of archive_screenshots.sh here>>>" == "$(shasum -a 256 ${HOME}/.local/bin/archive_screenshots.sh|awk '{print $1}')" ]] && ${HOME}/.local/bin/archive_screenshots.sh || echo "$(date +\'\%Y-\%m-\%d_\%Hh\%Mm_\%Z\') - Failed to validate checksum of ${HOME}/.local/bin/archive_screenshots.sh" >> ${HOME}/.local/log/archive_status.log
+
